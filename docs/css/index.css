@@ -10,9 +10,45 @@
 /* List/Thumbnail */
 .view-selector {
   position: absolute;
-  top: 6.7rem;
-  right: 5%;
   z-index: 998;
+}
+
+@media (min-width: 414px) {
+  .view-selector {
+    right: 5%;
+    top: 6rem;
+  }
+}
+
+/* 1024px ~ 1079px 사이: right: 5% 유지 */
+@media (min-width: 1024px) and (max-width: 1079px) {
+  .view-selector {
+    right: 5%;
+    top: 7rem;
+  }
+}
+
+/* 1080px 이상 ~ 1919px 이하: right: 0% */
+@media (min-width: 1080px) and (max-width: 1920px) {
+  .view-selector {
+    right: 5%;
+    top: 7rem;
+  }
+}
+
+
+
+.short-text {
+  display: none;
+}
+
+@media (max-width: 414px) {
+  .full-text {
+    display: none;
+  }
+  .short-text {
+    display: inline;
+  }
 }
 
 .view-selector a {
@@ -250,7 +286,7 @@ body.slide-out {
 /* 1️⃣ */
 .unseen-flow-wrapper {
     height: 15px;
-    width: 600px;
+    width: 45vw;
     border-bottom: 3px solid var(--color-black);
     box-sizing: border-box;
     display: flex;
@@ -277,11 +313,17 @@ body.slide-out {
 
 /* 2️⃣2️⃣ */
 .invisible-borders-wrapper {
-  height: 26px;
-  width: 600px;
+  height: 1.6rem;
+  width: 45vw;
   border-bottom: 2px solid var(--color-black);
   margin-left: auto;
   background-color: white;    
+}
+
+@media (max-width: 414px) {
+  .invisible-borders-wrapper {
+    height: 1rem;
+  }
 }
 
 /* 2️⃣2️⃣ */
@@ -317,6 +359,12 @@ body.slide-out {
   letter-spacing: 0.02em; 
 }
 
+@media (width: 414px) {
+  .bickham {
+    font-size: 1rem;
+  }
+}
+
 .frame-parent {
   align-self: stretch;
   display: flex;
@@ -327,13 +375,13 @@ body.slide-out {
 /* 타이틀제목 footer */
 .footer {
   position: fixed;          
-  top: 5px;                 
+  top: 0.5vh;                
   left: 50%;
   transform: translateX(-50%); 
   display: flex;
-  width: 1080px;
+  width: 90vw;
   height: 43px;         
-  padding-top: 10px;    
+  padding-top: 0.6rem;   
   flex-direction: column;
   align-items: center;
   max-width: 100%;
@@ -344,6 +392,11 @@ body.slide-out {
   background: #ffffff;    
 }
 
+@media (width: 414px) {
+  .footer {
+    font-size: var(--font-size-10); 
+  }
+}
 
 /* 1️⃣About */
 .about {
@@ -366,11 +419,17 @@ body.slide-out {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 0 var(--padding-20);
   box-sizing: border-box;
   cursor: pointer;
   position: relative; 
   transition: flex 0s ease, height 0.2s ease, font-size 0.2s ease;
+}
+
+@media (max-width: 414px) {
+  .footer-about,
+  .footer-about1 {
+    height: 30px;
+  }
 }
 
 .footer-about1 {
@@ -518,6 +577,12 @@ body.slide-out {
 }
 
 
+@media (max-width: 414px) {
+  .footer-about1 {
+    height: 30px;
+  }
+}
+
 
 .footer1 {
   align-self: stretch;
@@ -530,8 +595,11 @@ body.slide-out {
   color: rgb(255, 255, 255);
 }
 
-
-
+@media (width: 414px) {
+  .footer1 {
+    font-size: var(--font-size-16);
+  }
+}
 
 /* 2️⃣Check Border Access 커짐 */
 .footer-about.expanded {
@@ -798,10 +866,23 @@ select {
   height: auto;
   width: 90vw;
   flex-direction: column;
-  padding-top: clamp(120px, 12vw, 250px);
+  padding-top: 13vw;
   box-sizing: border-box;
   gap: 5px; 
   z-index: 9;
+}
+
+
+@media (width: 414px) {
+  .table {
+    padding-top: 30vw;
+  }
+}
+
+@media (min-width: 1224px) and (max-width: 1919px){
+  .table {
+    padding-top: 10vw;
+  }
 }
 
 /* ✨ 드롭다운 내용에 대한 CSS (새로 추가) ✨ */
@@ -938,6 +1019,28 @@ a {
 }
 
 
+@media (max-width: 414px) {
+  /* 좌표, 상태 셀 숨기기 */
+  .cell-coord,
+  .heading-row .heading-cell:has(.cell-coord),
+  .cell-status,
+  .heading-row .heading-cell:has(.cell-status) {
+    display: none !important;
+  }
+
+  /* flex 비율 조정 */
+  .cell-name,
+  .heading-row .heading-cell:has(.cell-name) {
+    flex: 3 1 0; 
+  }
+
+  .cell-types,
+  .heading-row .heading-cell:has(.cell-types) {
+    flex: 7 1 0;  
+  }
+}
+
+
 /* 셀 내부 텍스트가 넘치지 않도록 */
 .heading-cell .heading {
   white-space: normal; /* 텍스트 줄바꿈 허용 */
@@ -953,6 +1056,12 @@ a {
   text-align: left;
   font-size: var(--font-size-14);
   color: var(--color-black);
+}
+
+@media (max-width: 414px) {
+  .content {
+    font-size: var(--font-size-10); 
+  }
 }
 
 .frame-group,
