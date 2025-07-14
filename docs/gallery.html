@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./css/global.css"/>
+    <link rel="stylesheet" href="./css/index.css"/>
+    <link rel="stylesheet" href="./css/gallery.css"/>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.css" rel="stylesheet" />
+  </head>
+
+  <body>
+  <!-- ◼️◼️ ◼️ ◼️ ◼️ ◼️ ◼️   -->
+       <!-- ◼️ 왼쪽 위 정사각형 -->
+       <div class="top-square left"></div>
+       <div class="top-square right"></div>
+       <!-- ◼️ 검정색 선 추가 -->
+     <div class="side-line left-line"></div>
+     <div class="side-line right-line"></div>
+       <!-- ◼️ 검정색 선 추가2 -->
+     <div class="side-line left-line bottom-line"></div>
+     <div class="side-line right-line bottom-line"></div>
+
+     <div class="two-column-bg-intro">
+      <div class="column left-intro"></div>
+      <div class="column right-intro"></div>
+    </div>
+    
+      <!-- 📥노티피케이션 -->
+      <div id="notification-container"></div>
+
+
+    <div class="index-main">
+      <!-- Header, title, and info text - 고정 -->
+      <header class="footer">
+        <div class="frame-parent">
+          <div class="unseen-flow-wrapper">
+            <h3 class="unseen-flow-border">
+              : <span class="bickham" style="margin-right: 0.1em;">(un)</span>seen flow <span class="a">a.</span>
+            </h3>
+          </div>
+        </div>
+        <div class="frame-parent">
+          <div class="invisible-borders-wrapper">
+            <h3 class="invisible-borders">
+              : <span class="bickham" style="margin-right: 0.1em;">(in)</span>visible system, : <span class="bickham" style="margin-right: 0.1em;">(dis)</span>ability agency
+            </h3>
+          </div>
+        </div>
+        <div class="footer1">
+          <div class="footer-about" id="footerAboutContainer">
+            <h1 class="about">ABOUT</h1>
+            <div class="overlay-panel">
+              <p class="intro-text">
+                This platform does not view the border space around us as a simple geographical border or physical barrier. In today's world, borders are made up of complex and constantly changing fluid systems that span a variety of fields, including information, politics, and economics. To explore this, the platform classifies borders into ten types, illustrating how each is constructed and operates within multi-layered contexts of visibility and physicality. This allows us to gain a deeper understanding of the nature of borders and the complexity of the systems we are part of. </p>
+                <p class="info-text">
+                  <span class="section-title">General Information Sources:</span>
+                </p>
+                
+                <p class="info-text">
+                  The information compiled on this site draws from a range of sources that document not only the geographical placement of borders, but also their historical origins, structural forms, methods of crossing, and the political, social, and administrative mechanisms behind them. 
+                  This information has been primarily compiled from the following sources:
+                </p>
+                
+                <ul class="info-list">
+                  <li>・Atlas Obscura</li>
+                  <li>・Barrysborderpoints.com</li>
+                  <li>・Britannica Encyclopedia</li>
+                  <li>・Csis.org</li>
+                  <li>・Cfr.org</li>
+                  <li>・Encyclopedia.com</li>
+                  <li>・GeoNames</li>
+                  <li>・Google Maps</li>
+                  <li>・Globalsecurity.org</li>
+                  <li>・Grenspalen.one</li>
+                  <li>・GPS Coordinates</li>
+                  <li>・Latitude.to</li>
+                  <li>・UNHCR.org</li>
+                  <li>・Unficyp.org/</li>
+                  <li>・Unterm.org/</li>
+                  <li>・Wikipedia</li>
+                </ul>
+                
+                <p class="info-text">
+                  <span class="section-title">Font Information:</span>
+                </p>
+                
+                <ul class="info-list">
+                  <li>・Anton</li>
+                  <li>・Arual</li>
+                  <li>・Ashley by Gaile Pranckunaite</li>
+                  <li>・Bickham Script Pro</li>
+                  <li>・Gap Sans</li>
+                  <li>・Hedvig</li>
+                  <li>・News Gothic Std</li>
+                </ul><br>
+                <p class="info-text">
+                  KABK Graduation Project 2025 © Yejin Her. All rights reserved.
+                </p>
+            </div>
+          </div>
+          <div class="footer-about1" id="footerAboutContainer1">
+            <h2 class="check-border-access">EXPLORE 10 BORDER TYPES</h2>
+          </div>
+        </div>
+      </header>
+
+
+        <!--  List / Thumbnail  -->
+        <nav class="view-selector">
+          <a href="index.html">List</a>
+          <a href="gallery.html" class="active">Gallery</a>
+        </nav>
+
+             <!-- ❤️여기에 질문지 내용❤️ -->
+               <!-- Q1 -->
+               <div class="question-box" id="q1">
+                <select id="nationality">
+                  <option value=""><span class="arrow">⇥</span> EXPLORE DIFFERENT TYPES OF BORDERS THAT SHAPE OUR WORLD NOW </option>
+                  <option value="Group_A">Informational Border</option>
+                  <option value="Group_B">Political Border</option>
+                  <option value="Group_C">Administrative Border</option>
+                  <option value="Group_D">Economic Border</option>
+                  <option value="Group_E">Labor & Financial Border</option>
+                  <option value="Group_F">Socio-Cultural Border</option>
+                  <option value="Group_G">Security & Military</option>
+                  <option value="Group_H">Health & Quarantine</option>
+                  <option value="Group_I">Physical Border</option>
+                  <option value="Group_J">Natural Border</option>
+                </select>
+              </div>
+  
+
+            <!-- Active 이미지 이름 표시 -->
+            <div id="current-image-name">Bridge of no return</div>
+            
+      <!-- Scrollable gallery section -->
+      <main class="index-main-inner">
+        <section class="gallery-section">
+      <!-- 1 -->
+          <div class="gallery-item" data-id="drina-river" data-types="Natural,Physical,Political,Socio-Cultural">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/drina_river.png" alt=""/>
+              </div>
+              <div class="card-back">
+                <a class="dropdown-item-link" href="#" target="_blank"></a>
+              </div>
+            </div>
+          </div>
+      <!-- 2 -->
+          <div class="gallery-item" data-id="bridge-of-no-return" data-types="Physical,Political,Security&Military">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/bridge_of_no_return.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+
+          <div class="gallery-item" data-id="schengen-area" data-types="Administrative,Economic,Health&Quarantine,Informational,Labor&Financial,Natural,Physical,Political,Security&Military">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/schengen_area.png" alt=""/>
+              </div>
+              <div class="card-back">
+                <a class="dropdown-item-link" href="#" target="_blank"></a>
+              </div>
+            </div>
+          </div>
+      
+          <div class="gallery-item" data-id="okubo-bar" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/okubo_bar.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="the-slash" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/the_slash.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="great-firewall" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/great_firewall.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="the-big-bend-national-park" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/the_big_bend_national_park.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="mount-roraima" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/mount_roraima.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="berlin-wall" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/berlin_wall.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="kashmir-line-of-control" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/kashmir_line_of_control.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="himalayas-nathu-la-pass" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/himalayas_nathu_la_pass.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="rio-grande" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/rio_grande.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="llívia" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/llívia.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="euroairport" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/euroairport.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="belarus-pillbox" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/belarus_pillbox.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="iron-curtain" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/iron_curtain.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="dover-strait" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/dover_strait.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="maginot-line" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/maginot_line.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="gaza-strip" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/gaza_strip.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="amazon-rainforest" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/amazon_rainforest.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="san-ysidro-port-of-entry" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/san_ysidro_port_of_entry.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="kuwait-saudi-arabia-zone" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/kuwait_saudi_arabia_zone.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="refugee-camps" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/refugee_camps.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="tumen-river" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/tumen_river.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="ceuta-melilla" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/ceuta_melilla.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="green-line" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/green_line.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="shenzhen-checkpoints" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/shenzhen_checkpoints.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="mount-everest" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/mount_everest.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="calais-jungle" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/calais_jungle.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="aral-sea" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/aral_sea.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="panama-canals-zone" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/panama_canal_zone.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="chernobyl-exclusion-zone" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/chernobyl_exclusion_zone.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="checkpoint-charlie" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/checkpoint_charlie.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="svalbard-archipelago" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/svalbard_archipelago.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="guantanamo-bay" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/guantanamo_bay.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="karakoram-highway" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/karakoram_highway.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="un-buffer-zone" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/un_buffer_zone.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="canadian-arctic-waters" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/canadian_arctic_waters.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="enclaves" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/enclaves.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="cross-strait" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/cross_strait.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="silk-road" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/silk_road.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="ever-given-blockage" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/ever_given_blockage.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="uyuni-salt-flats-zone" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/uyuni_salt_flats_zone.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="gibraltar" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/gibraltar.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="blaine-peace-arch" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/blaine_peace_arch.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="west-bank-barrier" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/west_bank_barrier.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="storskog" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/storskog.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="darien-gap-panama" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/darien_gap_panama.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="taiwans-adiz" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/taiwans_adiz.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="eurotunnel-zone" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/eurotunnel_zone.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="us-surveillance-towers" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/us_surveillance_towers.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="haskell-free-library" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/haskell_free_library.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="south-china-sea-disputed-waters" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/south_china_sea_disputed_waters.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="ledra-palace-border" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/ledra_palace_border.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="un-blue-line" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/un_blue_line.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="narva-river" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/narva_river.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="australias-offshore" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/australias_offshore.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="transnistria-checkpoints" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/transnistria_checkpoints.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="berlin-tegel-refugee-shelter" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/berlin_tegel_refugee_shelter.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="gallery-item" data-id="crimea" data-types="">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/src/public/assets/crimea.png" alt=""/>
+              </div>
+              <div class="card-back">
+                  <a class="dropdown-item-link" href="#" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-id="tohono-oʼodham-nation" data-types="">
+              <div class="card-inner">
+                <div class="card-front">
+                  <img src="/src/public/assets/tohono.png" alt=""/>
+                </div>
+                <div class="card-back">
+                    <a class="dropdown-item-link" href="#" target="_blank"></a>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="gallery-item" data-id="baarle-nassau" data-types="">
+                <div class="card-inner">
+                  <div class="card-front">
+                    <img src="/src/public/assets/baarle-nassau.png" alt=""/>
+                  </div>
+                  <div class="card-back">
+                      <a class="dropdown-item-link" href="#" target="_blank"></a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="gallery-item" data-id="turtuk" data-types="">
+                  <div class="card-inner">
+                    <div class="card-front">
+                      <img src="/src/public/assets/turtuk.png" alt=""/>
+                    </div>
+                    <div class="card-back">
+                        <a class="dropdown-item-link" href="#" target="_blank"></a>
+                      </div>
+                    </div>
+                  </div>
+
+
+            
+                  <div class="gallery-item" data-id="triple-frontier" data-types="">
+                    <div class="card-inner">
+                      <div class="card-front">
+                        <img src="/src/public/assets/triple-frontier.png" alt=""/>
+                      </div>
+                      <div class="card-back">
+                          <a class="dropdown-item-link" href="#" target="_blank"></a>
+                        </div>
+                      </div>
+                    </div>      
+
+        </section>
+      </main>
+      
+
+
+
+
+
+<script src="js/index.js"></script>
+<script src="js/gallery.js"></script>
+
+<script>
+// 되돌아감
+document.addEventListener('DOMContentLoaded', () => {
+  let idleTime = 0;
+  const maxIdleMinutes = 2;  // 분 단위
+
+  function resetIdleTimer() {
+    idleTime = 0;
+    console.log('Idle timer reset');
+  }
+
+  ['mousemove', 'keydown', 'touchstart', 'click'].forEach(event => {
+    document.addEventListener(event, resetIdleTimer);
+  });
+
+  setInterval(() => {
+    idleTime++;
+    console.log('Idle time (seconds):', idleTime);
+    if (idleTime >= maxIdleMinutes * 60) {
+      window.location.href = './intro.html';
+    }
+  }, 1000);
+});
+
+</script>
+
+  </body>
+</html>
+
