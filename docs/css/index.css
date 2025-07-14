@@ -1021,15 +1021,3 @@ a {
   line-height: normal;
   letter-spacing: normal;
 }
-
-
-/* --- Media Queries --- */
-
-/* Media query for larger screens (e.g., typical desktop/web resolutions) */
-@media (min-width: 1080px) { /* This targets screens 1080px wide or wider */
-  .table {
-    padding-top: 18vh; /* Increase this value to move it down more */
-    /* You can also adjust width here if it needs to be 970px specifically for large screens */
-    width: 970px;
-  }
-}
