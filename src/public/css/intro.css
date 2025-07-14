@@ -1,0 +1,244 @@
+body {
+    background: #ffffff;
+    margin: 0;
+    font-family: sans-serif;
+    text-align: center;
+    height: 100vh;
+    transition: opacity 1s ease;
+    opacity: 1;
+    overflow: hidden;
+  }
+
+  body.fade-out {
+    opacity: 0;
+  }
+  
+
+
+  #enter-message {
+    position: fixed;
+    bottom: -95vh;
+    width: 1000px;
+    height: 30px;
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #8c8c8c;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 1s ease;
+    font-family: var(--font-Hedvig-Regular);
+    font-weight: normal;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  
+
+  
+  #enter-message-left {
+    position: fixed;
+    bottom: -95vh;
+    width: 1000px;
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #8c8c8c;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 1s ease;
+    font-family: var(--font-Hedvig-Regular);
+    font-weight: normal;
+
+    display: flex;
+  }
+  
+
+
+  /* title */
+/* 타이틀 footer */
+.footer {
+    position: fixed;          
+    top: 0px;                 
+    left: 50%;
+    transform: translateX(-50%); 
+    display: flex;
+    width: 1080px;
+    height: 60px;
+    padding-top: 10px;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    z-index: 99;
+    text-align: right;
+    font-size: var(--font-size-20);
+    color: rgb(0, 0, 0);
+  }
+
+  .frame-parent {
+    align-self: stretch;
+    display: flex;
+    gap: 0;
+  }
+
+  /* 왼쪽 선 너비 애니메이션 */
+  @keyframes shrinkGrowLeft {
+    0%, 100% { width: 600px; }
+    50% { width: 250px; }
+  }
+
+  /* 텍스트 이동 애니메이션 - 왼쪽 */
+  @keyframes moveTextLeft {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(-10px); } 
+  }
+
+
+ /* 오른쪽 선 너비 애니메이션 - 왼쪽과 동일하게 최소 300px */
+@keyframes shrinkGrowRight {
+    0%, 100% { width: 550px; }
+    50% { width: 950px; }  /* 왼쪽과 같은 최소 너비 */
+  }
+  
+ /* 오른쪽 텍스트 이동 애니메이션 - 오른쪽으로 이동하도록 수정 */
+@keyframes moveTextRight {
+    0%, 100% { transform: translateX(-190px); } 
+    50% { transform: translateX(-580px); }  
+}
+
+  /* 왼쪽 wrapper (선) */
+  .unseen-flow-wrapper {
+    height: 15px;
+    border-bottom: 2px solid var(--color-black);
+    box-sizing: border-box;
+    display: flex;
+    animation: shrinkGrowLeft 10s ease-in-out infinite;
+    overflow: visible;
+  }
+
+  /* 왼쪽 텍스트 */
+  .unseen-flow-border {
+    margin: 0;
+    align-self: stretch;
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-family: var(--font-Hedvig-Regular);
+    font-weight: 400;
+    animation: moveTextLeft 10s ease-in-out infinite;
+  }
+
+  .a {
+    font-family: var(--font-ashley-score);
+  }
+
+  /* 오른쪽 wrapper (선) */
+  .invisible-borders-wrapper {
+    height: 18px;
+    border-bottom: 2px solid var(--color-black);
+    margin-left: auto;
+    box-sizing: border-box;
+    display: flex;
+    animation: shrinkGrowRight 10s ease-in-out infinite;
+    overflow: visible;
+  }
+
+  /* 오른쪽 텍스트 */
+  .invisible-borders {
+    margin: 0;
+    position: relative;
+    display: flex; 
+    align-items: center;
+    font-family: var(--font-Hedvig-Regular);
+    font-weight: 400;
+    animation: moveTextRight 10s ease-in-out infinite;
+
+    margin-left: auto;  
+  }
+
+  /* 스크립트 폰트 */
+  .bickham {
+    font-family: var(--font-bickham-Script-Regular);
+    font-size: 2rem; 
+    letter-spacing: 0.02em; 
+    margin-right: 0.1em;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+/* 타이틀제목 footer */
+.footer {
+  position: fixed;          
+  top: 0px;                 
+  left: 50%;
+  transform: translateX(-50%); 
+  display: flex;
+  width: 1080px;
+  height: 60px;         /* 높이 조절 */
+  padding-top: 10px;    /* 위쪽에 여백 추가 */
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  z-index: 99;
+  text-align: right;
+  font-size: var(--font-size-20);
+  color: rgb(0, 0, 0);
+}
+
+
+/* Intro column */
+.two-column-bg-intro {
+position: fixed;
+top: 0; left: 0; right: 0; bottom: 0;
+display: flex;
+gap: 2px;
+z-index: -1;
+}
+
+.column {
+flex: 1;
+height: 100%;
+border-radius: 0px;
+background-repeat: no-repeat;
+background-size: 100% 100%;
+background-position: center;
+animation: syncedPulse 8s ease-in-out infinite;
+}
+
+
+.left-intro {
+background-image: linear-gradient(
+  to right,
+  #ffffff 0%,
+  #ffffff 80%,
+  #cccccc 100%
+);
+}
+
+.right-intro {
+background-image: linear-gradient(
+  to right, 
+  #cccccc 0%,
+  #ffffff 20%,
+  #ffffff 100%
+);
+}
+
+@keyframes syncedPulse {
+0%, 100% {
+  background-size: 100% 100%;
+}
+50% {
+  background-size: 195% 100%;
+}
+}

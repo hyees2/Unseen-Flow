@@ -1,0 +1,2443 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="./css/global.css"/>
+    <link rel="stylesheet" href="./css/index.css"/>
+
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.css" rel="stylesheet"/>
+  </head>
+
+  <body>
+    
+
+    <!-- ✅ scale-wrapper 시작 -->
+    <div class="scale-wrapper">
+
+    <div class="two-column-bg">
+        <div class="column left"></div>
+        <div class="column right"></div>
+      </div>
+
+       <!-- ◼️◼️ ◼️ ◼️ ◼️ ◼️ ◼️   -->
+       <!-- ◼️ 왼쪽 위 정사각형 -->
+      <div class="top-square left"></div>
+      <div class="top-square right"></div>
+      <!-- ◼️ 검정색 선 추가 -->
+    <div class="side-line left-line"></div>
+    <div class="side-line right-line"></div>
+      <!-- ◼️ 검정색 선 추가2 -->
+    <div class="side-line left-line bottom-line"></div>
+    <div class="side-line right-line bottom-line"></div>
+
+      <!-- 📥노티피케이션 -->
+    <div id="notification-container"></div>
+
+    <div class="index-main">
+      <main class="index-main-inner">
+        <section class="frame-group">
+          <div class="container">
+            <div class="half-rectangle"></div>
+            <div class="half-rectangle1"></div>
+          </div>
+
+          <header class="footer">
+            <div class="frame-parent">
+              <div class="unseen-flow-wrapper">
+                <h3 class="unseen-flow-border">
+                  <span>
+                    : <span class="bickham" style="margin-right: 0.1em;">(un)</span>seen flow 
+                   <span class="a">a.</span>
+                  </span>
+                </h3>
+              </div>
+            </div>
+            
+              <!-- 두 번째 컬럼 -->
+        <div class="frame-parent">
+          <div class="invisible-borders-wrapper">
+            <h3 class="invisible-borders">
+              : <span class="bickham" style="margin-right: 0.1em;">(in)</span>visible system, : <span class="bickham" style="margin-right: 0.1em;">(dis)</span>ability agency 
+            </h3>
+          </div>
+        </div>
+      </footer>
+
+
+            <div class="footer1">
+              <div class="footer-about" id="footerAboutContainer">
+                <h1 class="about">ABOUT</h1>
+                  <!-- 👇 펼쳐질 패널 -->
+                <div class="overlay-panel">
+                  <p class="info-text">
+                    <span class="section-title">Overview:</span>
+                  </p>
+                  <p class="intro-text">This platform does not view the border space around us as a simple geographical border or physical barrier. In today's world, borders are made up of complex and constantly changing fluid systems that span a variety of fields, including information, politics, and economics. To explore this, the platform classifies borders into ten types, illustrating how each is constructed and operates within multi-layered contexts of visibility and physicality. This allows for a deeper understanding of the nature of borders and the complexity of the systems in which they operate.</p>
+
+                    <p class="info-text">
+                      <span class="section-title">General Information Sources:</span>
+                    </p>
+                    
+                    <p class="info-text">
+                      The information compiled on this site draws from a range of sources that document not only the geographical placement of borders, but also their historical origins, structural forms, methods of crossing, and the political, social, and administrative mechanisms behind them. 
+                      This information has been primarily compiled from the following sources:
+                    </p>
+                    
+                    <ul class="info-list">
+                      <li>・Atlas Obscura</li>
+                      <li>・Barrysborderpoints.com</li>
+                      <li>・Britannica Encyclopedia</li>
+                      <li>・Csis.org</li>
+                      <li>・Cfr.org</li>
+                      <li>・Encyclopedia.com</li>
+                      <li>・GeoNames</li>
+                      <li>・Google Maps</li>
+                      <li>・Globalsecurity.org</li>
+                      <li>・Grenspalen.one</li>
+                      <li>・GPS Coordinates</li>
+                      <li>・Latitude.to</li>
+                      <li>・UNHCR.org</li>
+                      <li>・Unficyp.org/</li>
+                      <li>・Unterm.org/</li>
+                      <li>・Wikipedia</li>
+                    </ul>
+                    
+                    <p class="info-text">
+                      <span class="section-title">Font Information:</span>
+                    </p>
+                    
+                    <ul class="info-list">
+                      <li>・Anton</li>
+                      <li>・Arual</li>
+                      <li>・Ashley by Gaile Pranckunaite</li>
+                      <li>・Bickham Script Pro</li>
+                      <li>・Gap Sans</li>
+                      <li>・Hedvig</li>
+                      <li>・News Gothic Std</li>
+                    </ul><br>
+                    <p class="info-text">
+                      KABK Graduation Project 2025 © Yejin Her. All rights reserved.
+                    </p>
+                </div>
+              </div>
+              <div class="footer-about1" id="footerAboutContainer1">
+                <h2 class="check-border-access">EXPLORE 10 BORDER TYPES</h2>
+              </div>
+            </div>
+          </header>
+
+        <!--  List / Thumbnail  -->
+        <nav class="view-selector">
+          <a href="index.html" class="active">List</a>
+          <a href="gallery.html">Gallery</a>
+        </nav>
+
+          <main class="content">
+            <div class="table">
+              <div class="heading-row">
+                <div class="heading-cell">
+                  <div class="heading-title cell-name">Place<span class="sort-arrow"></span></div>
+                </div>
+                <div class="heading-cell">
+                  <div class="heading-title cell-types">Border Type<span class="sort-arrow"></span></div>
+                </div>
+                <div class="heading-cell">
+                  <div class="heading-title cell-coord">Location<span class="sort-arrow"></span></div>
+                </div>
+                <div class="heading-cell">
+                  <div class="heading-title cell-status">Status<span class="sort-arrow"></span></div>
+                </div>
+                <div class="heading-cell">
+                  <div class="heading-title cell-icon"></div>
+                </div>
+              </div>
+
+              <!-- ✋✋11111  DB✋✋ -->
+              <div class="body-row1" #rowRef data-id="drina-river" data-types="Natural,Physical,Political,Socio-Cultural">
+                <div class="heading-cell cell-name">
+                <div class="heading">Drina River</div>
+            </div>
+            <div class="heading-cell cell-types">
+                <div class="heading">
+                  <span class="category natural">Natural</span>
+                  <span class="category physical">Physical</span>
+                  <span class="category political">Political</span>
+                  <span class="category socio-cultural">Socio-Cultural</span>
+                </div>
+            </div>
+            <div class="heading-cell cell-coord">
+                <div class="heading">44.8900, 19.3540</div>
+            </div>
+            <div class="heading-cell cell-status">
+                <div class="heading status-tag active">• Active</div>
+            </div>
+            <div class="heading-cell cell-icon">
+                <div class="heading">+</div>
+            </div>
+
+            <div class="dropdown-content">
+              <div class="dropdown-item item-1">
+                <div class="map" data-lat="44.8900" data-lng="19.3540" data-zoom="10"></div>
+              </div>
+              <div class="dropdown-item item-2"></div>
+              <div class="dropdown-item item-3"></div>
+            </div>
+        </div>
+
+            <!-- ✋✋222222 DB✋✋ -->
+              <div class="body-row1" #rowRef data-id="bridge-of-no-return" data-types="Physical,Political,Security&Military">
+                <div class="heading-cell cell-name">
+                  <div class="heading">Bridge of no return</div>
+                </div>
+                <div class="heading-cell cell-types">
+                  <div class="heading">
+                    <span class="category physical">Physical</span>
+                    <span class="category political">Political</span>
+                    <span class="category security-military">Security&Military</span>
+                  </div>
+                </div>
+                <div class="heading-cell cell-coord">
+                  <div class="heading">37.9613, 126.6699</div>
+                </div>
+                <div class="heading-cell cell-status">
+                  <div class="heading status-tag inactive">• Inactive</div>
+                </div>
+                <div class="heading-cell cell-icon">
+                  <div class="heading">+</div>
+                </div>
+
+                <div class="dropdown-content">
+                  <div class="dropdown-item item-1">
+                    <div class="map" data-lat="37.9613" data-lng="126.6699" data-zoom="10"></div>
+                  </div>
+                  <div class="dropdown-item item-2"></div>
+                  <div class="dropdown-item item-3"></div>
+                  </div>
+            </div>
+
+
+           <!-- ✋✋33333 DB✋✋ -->
+           <div class="body-row1" #rowRef data-id="schengen-area" data-types="Administrative,Economic,Health&Quarantine,Informational,Labor&Financial,Natural,Physical,Political,Security&Military">
+            <div class="heading-cell cell-name">
+              <div class="heading">Schengen Area</div>
+            </div>
+            <div class="heading-cell cell-types">
+              <div class="heading">
+                <span class="category administrative">Administrative</span>
+                <span class="category economic">Economic</span>
+                <span class="category health-quarantine">Health&Quarantine</span>
+                <span class="category informational">Informational</span>
+                <span class="category labor-financial">Labor&Financial</span>
+                <span class="category natural">Natural</span>
+                <span class="category physical">Physical</span>
+                <span class="category political">Political</span>
+                <span class="category security-military">Security&Military</span>
+              </div>
+            </div>
+            <div class="heading-cell cell-coord">
+              <div class="heading">48.8566, 2.3522</div>
+            </div>
+            <div class="heading-cell cell-status">
+              <div class="heading status-tag active">• Active</div>
+            </div>
+            <div class="heading-cell cell-icon">
+              <div class="heading">+</div>
+            </div>
+
+            <div class="dropdown-content">
+              <div class="dropdown-item item-1">
+                <div class="map" data-lat="48.8566" data-lng="2.3522" data-zoom="1"></div>
+              </div>
+              <div class="dropdown-item item-2"></div>
+              <div class="dropdown-item item-3"></div>
+            </div>
+        </div>
+
+        <!-- ✋✋4444444 DB✋✋ -->
+        <div class="body-row1" #rowRef data-id="okubo-bar" data-types="Socio-Cultural">
+          <div class="heading-cell cell-name">
+            <div class="heading">Okubo Bar</div>
+          </div>
+          <div class="heading-cell cell-types">
+            <div class="heading">
+              <span class="category socio-cultural">Socio-Cultural</span>
+            </div>
+          </div>
+          <div class="heading-cell cell-coord">
+            <div class="heading">35.69974, 139.69755</div>
+          </div>
+          <div class="heading-cell cell-status">
+            <div class="heading status-tag active">• Active</div>
+          </div>
+          <div class="heading-cell cell-icon">
+            <div class="heading">+</div>
+          </div>
+
+          <div class="dropdown-content">
+            <div class="dropdown-item item-1">
+              <div class="map" data-lat="35.69974" data-lng="139.69755" data-zoom="20"></div>
+            </div>
+            <div class="dropdown-item item-2"></div>
+            <div class="dropdown-item item-3"></div>
+          </div>
+      </div>
+
+      <!-- ✋✋55555555 DB✋✋ -->
+      <div class="body-row1" #rowRef data-id="the-slash" data-types="Administrative,Informational,Natural,Physical,Political,Security&Military">
+        <div class="heading-cell cell-name">
+          <div class="heading">The Slash </div>
+        </div>
+        <div class="heading-cell cell-types">
+          <div class="heading">
+            <span class="category administrative">Administrative</span>
+            <span class="category informational">Informational</span>
+            <span class="category natural">Natural</span>
+            <span class="category physical">Physical</span>
+            <span class="category political">Political</span>
+            <span class="category security-military">Security&Military</span>
+          </div>
+        </div>
+        <div class="heading-cell cell-coord">
+          <div class="heading">45.00490, -72.23148</div>
+        </div>
+        <div class="heading-cell cell-status">
+          <div class="heading status-tag active">• Active</div>
+        </div>
+        <div class="heading-cell cell-icon">
+          <div class="heading">+</div>
+        </div>
+
+        <div class="dropdown-content">
+          <div class="dropdown-item item-1">
+            <div class="map" data-lat="45.00490" data-lng="-72.23148" data-zoom="8"></div>
+          </div>
+            <div class="dropdown-item item-2"></div>
+            <div class="dropdown-item item-3"></div>
+        </div>
+    </div>
+
+   <!-- ✋✋6666666 DB✋✋ -->
+   <div class="body-row1" #rowRef data-id="great-firewall" data-types="Informational,Political">
+    <div class="heading-cell cell-name">
+      <div class="heading">China’s “Great Firewall”</div>
+    </div>
+    <div class="heading-cell cell-types">
+      <div class="heading">
+        <span class="category informational">Informational</span>
+        <span class="category political">Political</span>
+      </div>
+    </div>
+    <div class="heading-cell cell-coord">
+      <div class="heading"> 39.91666, 116.38333</div>
+    </div>
+    <div class="heading-cell cell-status">
+      <div class="heading status-tag active">• Active</div>
+    </div>
+    <div class="heading-cell cell-icon">
+      <div class="heading">+</div>
+    </div>
+
+    <div class="dropdown-content">
+      <div class="dropdown-item item-1">
+        <div class="map" data-lat=" 39.91666" data-lng="116.38333" data-zoom="2"></div>
+      </div>
+        <div class="dropdown-item item-2"></div>
+        <div class="dropdown-item item-3"></div>
+    </div>
+</div>
+
+ <!-- ✋✋77777 DB✋✋ -->
+ <div class="body-row1" #rowRef data-id="the-big-bend-national-park" data-types="Natural,physical,political,security-military">
+  <div class="heading-cell cell-name">
+    <div class="heading">The Big Bend National Park</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+      <span class="category natural">Natural</span>
+       <span class="category physical">Physical</span>
+        <span class="category political">Political</span>
+         <span class="category security-military">Security&Military</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">29.25, -103.25</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="29.25" data-lng="-103.25" data-zoom="8"></div>
+    </div>
+      <div class="dropdown-item item-2"></div>
+      <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+ <!-- ✋✋888888 DB✋✋ -->
+ <div class="body-row1" #rowRef data-id="mount-roraima" data-types="Natural,political,socio-cultural">
+  <div class="heading-cell cell-name">
+    <div class="heading">Mount Roraima</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+      <span class="category natural">Natural</span>
+      <span class="category political">Political</span>
+      <span class="category socio-cultural">Socio-Cultural</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">5.1433, -60.7573</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="5.2270° N" data-lng="-60.7573"></div>
+    </div>
+      <div class="dropdown-item item-2"></div>
+      <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+ <!-- ✋✋9999999 DB✋✋ -->
+ <div class="body-row1" #rowRef data-id="berlin-wall" data-types="Administrative,Economic,Informational,Political,Security&Military,Socio-Cultural">
+  <div class="heading-cell cell-name">
+    <div class="heading">Berlin Wall</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+      <span class="category administrative">Administrative</span>
+      <span class="category economic">Economic</span>
+      <span class="category informational">Informational</span>
+      <span class="category political">Political</span>
+       <span class="category security-military">Security&Military</span>
+      <span class="category socio-cultural">Socio-Cultural</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">52.5186, 13.4083</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag inactive">• Inactive</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="52.5186" data-lng="13.4083" data-zoom="15"></div>
+    </div>
+      <div class="dropdown-item item-2"></div>
+      <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+
+ <!-- ✋✋101010 DB✋✋ -->
+ <div class="body-row1" #rowRef data-id="kashmir-line-of-control" data-types="Natural,Political,Security&Military,socio-cultural">
+  <div class="heading-cell cell-name">
+    <div class="heading">Kashmir Line of Control</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+      <span class="category natural">Natural</span>
+      <span class="category political">Political</span>
+      <span class="category security-military">Security&Military</span>
+      <span class="category socio-cultural">Socio-Cultural</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">34.9333, 76.7667</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="34.9333" data-lng="76.7667" data-zoom="7"></div>
+    </div>
+      <div class="dropdown-item item-2"></div>
+      <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+
+
+ <!-- ✋🏻✋🏻11111 DB✋🏻✋🏻 -->
+ <div class="body-row1" #rowRef data-id="himalayas-nathu-la-pass" data-types="Economic,Natural,Political,Security&Military">
+  <div class="heading-cell cell-name">
+    <div class="heading">Himalayas Nathu La Pass</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+      <span class="category economic">Economic</span>
+      <span class="category natural">Natural</span>
+      <span class="category political">Political</span>
+      <span class="category security-military">Security&Military</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">27.38729, 88.83108</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="27.38729" data-lng="88.83108" data-zoom="10"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+
+<!-- ✋🏻✋🏻1212 DB✋🏻✋🏻 -->
+<div class="body-row1" #rowRef data-id="rio-grande" data-types=
+"Labor&Financial,Natural,Political,Security&Military,Socio-Cultural">
+  <div class="heading-cell cell-name">
+    <div class="heading">Rio Grande</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+      <span class="category labor-financial">Labor&Financial</span>
+      <span class="category natural">Natural</span>
+      <span class="category political">Political</span>
+      <span class="category security-military">Security&Military</span>
+      <span class="category socio-cultural">Socio-Cultural</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">29.52806, -101.25834</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="29.52806" data-lng="-101.25834" data-zoom="8"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+ <!-- ✋🏻✋🏻1313 DB✋🏻✋🏻 -->
+ <div class="body-row1" #rowRef data-id="llívia" data-types="Administrative,Economic,Political">
+  <div class="heading-cell cell-name">
+    <div class="heading">Llívia</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+      <span class="category administrative">Administrative</span>
+      <span class="category economic">Economic</span>
+      <span class="category political">Political</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">42.46320, 1.98062</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="42.46320" data-lng="1.98062" data-zoom="12"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+
+<!-- ✋🏻✋🏻1414 DB✋🏻✋🏻 -->
+<div class="body-row1" #rowRef data-id="euroairport" data-types=
+"Administrative,Economic,Informational,Labor&Financial,Political">
+  <div class="heading-cell cell-name">
+    <div class="heading">EuroAirport</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+      <span class="category administrative">Administrative</span>
+      <span class="category economic">Economic</span>
+      <span class="category informational">Informational</span>
+      <span class="category labor-financial">Labor&Financial</span>
+      <span class="category political">Political</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">47.59746, 7.52599</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="47.59746" data-lng="7.52599" data-zoom="11"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+<!-- ✋🏻✋🏻1515 DB✋🏻✋🏻 -->
+<div class="body-row1" #rowRef data-id="belarus-pillbox" data-types="Informational,Political,Security&Military">
+  <div class="heading-cell cell-name">
+    <div class="heading">Three Sisters</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+      <span class="category informational">Informational</span>
+      <span class="category political">Political</span>
+      <span class="category security-military">Security&Military</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">52.11207,31.78168</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="52.11207" data-lng="31.78168" data-zoom="12"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+
+<!-- ✋🏻✋🏻1616 DB✋🏻✋🏻 -->
+<div class="body-row1" #rowRef data-id="iron-curtain" data-types=
+"Economic,Informational,Physical,Political,Socio-Cultural">
+  <div class="heading-cell cell-name">
+    <div class="heading">Iron Curtain</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+      <span class="category economic">Economic</span>
+      <span class="category informational">Informational</span>
+      <span class="category physical">Physical</span>
+      <span class="category political">Political</span>
+      <span class="category socio-cultural">Socio-Cultural</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">48.87216, 15.87082</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag inactive">• Inactive</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="48.87216" data-lng="15.87082" data-zoom="10"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+ <!-- ✋🏻✋🏻1717 DB✋🏻✋🏻 -->
+ <div class="body-row1" #rowRef data-id="dover-strait" data-types=
+ "Economic,Labor&Financial,Natural,Political,Security&Military">
+  <div class="heading-cell cell-name">
+    <div class="heading">Dover Strait</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+      <span class="category economic">Economic</span>
+      <span class="category labor-financial">Labor&Financial</span>
+      <span class="category natural">Natural</span>>
+      <span class="category political">Political</span>
+      <span class="category security-military">Security&Military</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">51.0475, 1.4883</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="51.0475" data-lng="1.4883" data-zoom="7"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+
+<!-- ✋🏻✋🏻1818 DB✋🏻✋🏻 -->
+<div class="body-row1" #rowRef data-id="maginot-line" data-types="Physical,Security&Military">
+  <div class="heading-cell cell-name">
+    <div class="heading">Maginot Line</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+      <span class="category physical">Physical</span>
+      <span class="category security-military">Security&Military</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">48.96896, 7.91276</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag inactive">• Inactive</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="48.96896" data-lng="7.91276" data-zoom="10"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+ <!-- ✋🏻✋🏻1919 DB✋🏻✋🏻 -->
+ <div class="body-row1" #rowRef data-id="gaza-strip" data-types=
+ "Economic,Informational,Labor&Financial,Physical,Political,Security&Military,Socio-Cultural">
+  <div class="heading-cell cell-name">
+    <div class="heading">Gaza Strip</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+      <span class="category economic">Economic</span>
+      <span class="category informational">Informational</span>
+      <span class="category labor-financial">Labor&Financial</span>
+      <span class="category physical">Physical</span>
+      <span class="category political">Political</span>
+      <span class="category security-military">Security&Military</span>
+      <span class="category socio-cultural">Socio-Cultural</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">31.350, 34.350</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="31.350" data-lng="34.350" data-zoom="8"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+
+<!-- ✋🏻✋🏻2020 DB✋🏻✋🏻 -->
+<div class="body-row1" #rowRef data-id="amazon-rainforest" data-types="Natural,Political,Socio-Cultural">
+  <div class="heading-cell cell-name">
+    <div class="heading">Amazon Rainforest</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+      <span class="category natural">Natural</span>
+      <span class="category political">Political</span>
+      <span class="category socio-cultural">Socio-Cultural</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">-2.16310, -55.12664</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="-2.16310" data-lng="-55.12664" data-zoom="2"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+
+ <!--🖐🏼🖐🏼2121 DB🖐🏼🖐🏼 -->
+ <div class="body-row1" #rowRef data-id="san-ysidro-port-of-entry" data-types=
+ "Economic,Informational,Labor&Financial,Physical,Political,Security&Military">
+  <div class="heading-cell cell-name">
+    <div class="heading">San Ysidro Port of Entry</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+      <span class="category economic">Economic</span>
+      <span class="category informational">Informational</span>
+      <span class="category labor-financial">Labor&Financial</span>
+      <span class="category physical">Physical</span>
+      <span class="category political">Political</span>
+      <span class="category security-military">Security&Military</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">32.54449, -117.02969</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="32.54449" data-lng="-117.02969" data-zoom="12"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+
+
+
+ <!--🖐🏼🖐🏼2222DB🖐🏼🖐🏼 -->
+ <div class="body-row1" #rowRef data-id="kuwait-saudi-arabia-zone" data-types=
+ "Administrative,Economic,Political">
+  <div class="heading-cell cell-name">
+    <div class="heading">Kuwait-Saudi Arabia Zone</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+      <span class="category administrative">Administrative</span>
+      <span class="category economic">Economic</span>
+      <span class="category political">Political</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">28.4473, 47.8621</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="28.4473" data-lng="47.8621" data-zoom="6"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+
+
+ <!--🖐🏼🖐🏼2323 DB🖐🏼🖐🏼 -->
+ <div class="body-row1" #rowRef data-id="refugee-camps" data-types=
+ "Administrative,Health&Quarantine,Informational,Socio-Cultural"> 
+  <div class="heading-cell cell-name">
+    <div class="heading">Refugee Camps in Zaatari</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+      <span class="category administrative">Administrative</span>
+      <span class="category health-quarantine">Health&Quarantine</span>
+      <span class="category informational">Informational</span>
+     <span class="category socio-cultural">Socio-Cultural</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">32.29566, 36.32375</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="32.29566" data-lng="36.32375" data-zoom="12"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+
+
+ <!--🖐🏼🖐🏼2424DB🖐🏼🖐🏼 -->
+ <div class="body-row1" #rowRef data-id="tumen-river" data-types=
+ "Economic,Labor&Financial,Natural,Political,Security&Military,Socio-Cultural">
+  <div class="heading-cell cell-name">
+    <div class="heading">Tumen River</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+      <span class="category economic">Economic</span>
+      <span class="category labor-financial">Labor&Financial</span>
+      <span class="category political">Political</span>
+      <span class="category security-military">Security&Military</span>
+     <span class="category socio-cultural">Socio-Cultural</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">42.49560, 129.60199</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="42.49560" data-lng="129.60199" data-zoom="8"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+
+
+ <!--🖐🏼🖐🏼2525 DB🖐🏼🖐🏼 -->
+ <div class="body-row1" #rowRef data-id="ceuta-melilla" data-types=
+ "Economic,Informational,Labor&Financial,Physical,Political,Security&Military"> 
+  <div class="heading-cell cell-name">
+    <div class="heading">Ceuta & Melilla</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+          <span class="category economic">Economic</span>
+          <span class="category informational">Informational</span>
+          <span class="category labor-financial">Labor&Financial</span>
+          <span class="category physical">Physical</span>
+          <span class="category political">Political</span>
+          <span class="category security-military">Security&Military</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">35.29252, -2.93647</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="35.29252" data-lng="-2.93647" data-zoom="10"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+
+
+ <!--🖐🏼🖐🏼2626DB🖐🏼🖐🏼 -->
+ <div class="body-row1" #rowRef data-id="green-line" 
+ data-types=
+ "Economic,Informational,Physical,Political,Security&Military,Socio-Cultural">
+ 
+  <div class="heading-cell cell-name">
+    <div class="heading">Green Line</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+          <span class="category economic">Economic</span>
+          <span class="category informational">Informational</span>
+          <span class="category physical">Physical</span>
+          <span class="category political">Political</span>
+          <span class="category security-military">Security&Military</span>
+          <span class="category socio-cultural">Socio-Cultural</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">35.19390, 33.38960</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="35.19390" data-lng="33.38960" data-zoom="8"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+
+
+ <!--🖐🏼🖐🏼2727 DB🖐🏼🖐🏼 -->
+ <div class="body-row1" #rowRef data-id="shenzhen-checkpoints" data-types=
+ "Administrative,Economic,Informational,Labor&Financial,Physical,Security&Military">
+  <div class="heading-cell cell-name">
+    <div class="heading">Shenzhen Checkpoints</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+      <span class="category administrative">Administrative</span>
+      <span class="category economic">Economic</span>
+      <span class="category informational">Informational</span>
+      <span class="category labor-financial">Labor&Financial</span>
+      <span class="category physical">Physical</span>
+      <span class="category security-military">Security&Military</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">22.50611, 113.94472</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="22.50611" data-lng="113.94472" data-zoom="12"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+
+
+ <!--🖐🏼🖐🏼2828DB🖐🏼🖐🏼 -->
+ <div class="body-row1" #rowRef data-id="mount-everest" data-types="Natural,Political">
+  <div class="heading-cell cell-name">
+    <div class="heading">Mount Everest Summit</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+    <span class="category natural">Natural</span>
+    <span class="category political">Political</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">27.9881, 86.9253</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="27.9881" data-lng="86.9253" data-zoom="12"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+
+
+
+
+ <!--🖐🏼🖐🏼2929 DB🖐🏼🖐🏼 -->
+ <div class="body-row1" #rowRef data-id="calais-jungle" data-types=
+ "Administrative,Health&Quarantine,Informational,Physical,Socio-Cultural">
+  <div class="heading-cell cell-name">
+    <div class="heading">Calais Jungle</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+      <span class="category administrative">Administrative</span>
+      <span class="category health-quarantine">Health&Quarantine</span>
+      <span class="category informational">Informational</span>
+      <span class="category physical">Physical</span>
+     <span class="category socio-cultural">Socio-Cultural</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">50.95446, 1.86280</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag inactive">• Inactive</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="50.95446" data-lng="1.86280" data-zoom="10"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+
+
+ <!--🖐🏼🖐🏼3030DB🖐🏼🖐🏼 -->
+ <div class="body-row1" #rowRef data-id="aral-sea" data-types="Natural,Political">
+  <div class="heading-cell cell-name">
+    <div class="heading">Aral Sea</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+      <span class="category natural">Natural</span>
+      <span class="category political">Political</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">45.13194, 60.07541</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="45.13194" data-lng="60.07541" data-zoom="8"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+
+
+ <!-- 🤚3131DB🤚 -->
+ <div class="body-row1" #rowRef data-id="panama-Canal-Zone" data-types="Administrative,Economic,Political,Security&Military">
+  <div class="heading-cell cell-name">
+    <div class="heading">Panama Canal Zone</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+	<span class="category administrative">Administrative</span>
+       <span class="category economic">Economic</span>
+       <span class="category political">Political</span>
+     <span class="category security-military">Security&Military</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">9.02404, -79.61741</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="9.02404" data-lng="-79.61741" data-zoom="8"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+
+ <!-- 🤚3232DB🤚 -->
+ <div class="body-row1" #rowRef data-id="chernobyl-exclusion-zone" data-types="Administrative,Health&Quarantine,Natural,Security&Military">
+  <div class="heading-cell cell-name">
+    <div class="heading">Chernobyl Exclusion Zone</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+		<span class="category administrative">Administrative</span>
+ 		<span class="category health-quarantine">Health&Quarantine</span>
+     <span class="category natural">Natural</span>
+		<span class="category security-military">Security&Military</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">51.29541, 30.22270</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="51.29541" data-lng="30.22270" data-zoom="10"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+
+ <!-- 🤚3333DB🤚 -->
+ <div class="body-row1" #rowRef data-id="checkpoint-charlie" data-types="Informational,Physical,Political,Security&Military,Socio-Cultural">
+  <div class="heading-cell cell-name">
+    <div class="heading">Checkpoint Charlie</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+      <span class="category informational">Informational</span>
+	 <span class="category physical">Physical</span>
+	<span class="category political">Political</span>
+  <span class="category security-military">Security&Military</span>
+  <span class="category socio-cultural">Socio-Cultural</span>
+
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">52.50743, 13.39027</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag inactive">• Inactive</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="52.50743" data-lng="13.39027" data-zoom="15"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+
+ <!-- 🤚3434DB🤚 -->
+ <div class="body-row1" #rowRef data-id="svalbard-archipelago" data-types="Administrative,Economic,Natural,Political">
+  <div class="heading-cell cell-name">
+    <div class="heading">Svalbard Archipelago</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+      	<span class="category administrative">Administrative</span>
+          <span class="category economic">Economic</span>
+		<span class="category natural">Natural</span>
+    <span class="category political">Political</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">78.60212, 17.02994</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="78.60212" data-lng="17.02994" data-zoom="3"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+  <!-- 🤚3535DB🤚 -->
+ <div class="body-row1" #rowRef data-id="guantanamo-bay" data-types="Administrative,Physical,Political,Security&Military">
+  <div class="heading-cell cell-name">
+    <div class="heading">Guantanamo Bay</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+      <span class="category administrative">Administrative</span>
+      <span class="category physical">Physical</span>
+	<span class="category political">Political</span>
+  <span class="category security-military">Security&Military</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">19.90666, -75.14666</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="19.90666" data-lng="-75.14666" data-zoom="7"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+
+ <!-- 🤚3636DB🤚 -->
+ <div class="body-row1" #rowRef data-id="karakoram-highway" data-types="Economic,Physical,Political,Socio-Cultural">
+  <div class="heading-cell cell-name">
+    <div class="heading">Karakoram Highway</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+       <span class="category economic">Economic</span>
+ 	<span class="category physical">Physical</span>
+   <span class="category political">Political</span>
+   <span class="category socio-cultural">Socio-Cultural</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">35.59999, 74.65000</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="35.59999" data-lng="74.65000" data-zoom="6"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+
+ <!-- 🤚3737DB🤚 -->
+ <div class="body-row1" #rowRef data-id="un-buffer-zone" data-types="Administrative,Physical,Political,Security&Military">
+  <div class="heading-cell cell-name">
+    <div class="heading">UN Buffer Zone</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+      <span class="category administrative">Administrative</span>
+      <span class="category physical">Physical</span>
+      <span class="category political">Political</span>
+	 <span class="category security-military">Security&Military</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">35.18724, 33.35731</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="35.18724" data-lng="33.35731" data-zoom="12"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+
+ <!-- 🤚3838DB🤚 -->
+ <div class="body-row1" #rowRef data-id="canadian-arctic-waters" data-types="Economic,Natural,Political,Security&Military">
+  <div class="heading-cell cell-name">
+    <div class="heading">Canadian Arctic Waters</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+	<span class="category economic">Economic</span>
+	<span class="category natural">Natural</span>
+	<span class="category political">Political</span>
+  <span class="category security-military">Security&Military</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">75, -90</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="75" data-lng="-90" data-zoom="2"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+ <!-- 🤚3939DB🤚 -->
+ <div class="body-row1" #rowRef data-id="enclaves" data-types="Administrative,Economic,Physical,Political,Socio-Cultural">
+  <div class="heading-cell cell-name">
+    <div class="heading">India–Bangladesh Enclaves</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+       <span class="category administrative">Administrative</span>
+       <span class="category economic">Economic</span>
+       <span class="category physical">Physical</span>
+	<span class="category political">Political</span>
+	 <span class="category socio-cultural">Socio-Cultural</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">26.14520, 89.51200</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag inactive">• Inactive</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="26.14520" data-lng="89.51200" data-zoom="10"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+
+ <!-- 🤚4040DB🤚 -->
+ <div class="body-row1" #rowRef data-id="cross-strait" data-types="Economic,Informational,Labor&Financial,Political,Security&Military,Socio-Cultural">
+  <div class="heading-cell cell-name">
+    <div class="heading">Cross-Strait</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+      <span class="category economic">Economic</span>
+      <span class="category informational">Informational</span>
+      <span class="category labor-financial">Labor&Financial</span>
+      <span class="category political">Political</span>
+      <span class="category security-military">Security&Military</span>
+     <span class="category socio-cultural">Socio-Cultural</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">24.80666, 119.92366</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="24.80666" data-lng="119.92366" data-zoom="5"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+ <!-- ✋🏻4141DB✋🏻 -->
+ <div class="body-row1" #rowRef data-id="silk-road" data-types="Administrative,Economic,Informational,Natural,Socio-Cultural">
+  <div class="heading-cell cell-name">
+    <div class="heading">Silk Road</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+      <span class="category administrative">Administrative</span>
+      <span class="category economic">Economic</span>
+      <span class="category informational">Informational</span>
+      <span class="category natural">Natural</span>
+      <span class="category socio-cultural">Socio-Cultural</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">12.91724,77.62295</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag inactive">• inactive</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="12.91724" data-lng="77.62295" data-zoom="1"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+
+ <!-- ✋🏻4242DB✋🏻 -->
+ <div class="body-row1" #rowRef data-id="ever-given-blockage" data-types="Administrative,Economic,Informational,Physical">
+  <div class="heading-cell cell-name">
+    <div class="heading">Suez Canal obstruction</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+      <span class="category administrative">Administrative</span>
+      <span class="category economic">Economic</span>
+      <span class="category informational">Informational</span>
+	 <span class="category physical">Physical</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">30.57277, 32.49194</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag inactive">• Inactive</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="30.57277" data-lng="32.49194" data-zoom="8"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+
+ <!-- ✋🏻4343DB✋🏻 -->
+ <div class="body-row1" #rowRef data-id="uyuni-salt-flats-zone" data-types="Economic,Natural,Political">
+  <div class="heading-cell cell-name">
+    <div class="heading">Uyuni Salt Flats Zone</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+	<span class="category economic">Economic</span>
+      <span class="category natural">Natural</span>
+      <span class="category political">Political</span>
+
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">-20.07282, -67.64183</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="-20.07282" data-lng="-67.64183" data-zoom="7"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+
+ <!-- ✋🏻4444DB✋🏻 -->
+ <div class="body-row1" #rowRef data-id="gibraltar" data-types="Administrative,Economic,Physical,Political,Security&Military,Socio-Cultural">
+  <div class="heading-cell cell-name">
+    <div class="heading">Gibraltar</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+   <span class="category administrative">Administrative</span>
+	<span class="category economic">Economic</span>
+  <span class="category physical">Physical</span>
+ 	<span class="category political">Political</span>
+ 	<span class="category security-military">Security&Military</span>
+   <span class="category socio-cultural">Socio-Cultural</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">36.14017, -5.35209</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="36.14017" data-lng="-5.35209" data-zoom="11"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+
+ <!-- ✋🏻4545DB✋🏻 -->
+ <div class="body-row1" #rowRef data-id="blaine-peace-arch" data-types="Administrative,Economic,Physical,Political,Socio-Cultural">
+  <div class="heading-cell cell-name">
+    <div class="heading">Blaine Peace Arch</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+       <span class="category administrative">Administrative</span>
+       <span class="category economic">Economic</span>
+	    <span class="category physical">Physical</span>
+      <span class="category political">Political</span>
+      <span class="category socio-cultural">Socio-Cultural</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">49.00227, -122.75654</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="49.00227" data-lng="-122.75654" data-zoom="15"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+
+ <!-- ✋🏻4646DB✋🏻 -->
+ <div class="body-row1" #rowRef data-id="west-bank-barrier" data-types="Administrative,Economic,Health&Quarantine,Informational,Physical,Political,Security&Military,Socio-Cultural">
+  <div class="heading-cell cell-name">
+    <div class="heading">West Bank Barrier</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+      <span class="category administrative">Administrative</span>
+      <span class="category economic">Economic</span>
+      <span class="category health-quarantine">Health&Quarantine</span>
+      <span class="category informational">Informational</span>
+      <span class="category physical">Physical</span>
+      <span class="category political">Political</span>
+      <span class="category security-military">Security&Military</span>
+     <span class="category socio-cultural">Socio-Cultural</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">32.0, 35.38333</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="32.0" data-lng="35.38333" data-zoom="8"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+
+ <!-- ✋🏻4747DB✋🏻 -->
+ <div class="body-row1" #rowRef data-id="storskog" data-types="Administrative,Economic,Labor&Financial,Physical,Political,Security&Military,Socio-Cultural">
+  <div class="heading-cell cell-name">
+    <div class="heading">Storskog</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+      <span class="category administrative">Administrative</span>
+      <span class="category economic">Economic</span>
+      <span class="category labor-financial">Labor&Financial</span>
+      <span class="category physical">Physical</span>
+      <span class="category political">Political</span>
+      <span class="category security-military">Security&Military</span>
+     <span class="category socio-cultural">Socio-Cultural</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">69.65834, 30.20379</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="69.65834" data-lng="30.20379" data-zoom="10"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+
+ <!-- ✋🏻4848DB✋🏻 -->
+ <div class="body-row1" #rowRef data-id="darien-gap-panama" data-types="Economic,Health&Quarantine,Natural,Physical,Security&Military,Socio-Cultural">
+  <div class="heading-cell cell-name">
+    <div class="heading">Darien Gap Panama</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+      <span class="category economic">Economic</span>
+  	<span class="category health-quarantine">Health&Quarantine</span>
+      <span class="category natural">Natural</span>
+      <span class="category physical">Physical</span>
+      <span class="category security-military">Security&Military</span>
+	 <span class="category socio-cultural">Socio-Cultural</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">7.9, -77.46</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="7.9" data-lng="-77.46" data-zoom="8"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+
+ <!-- ✋🏻4949DB✋🏻 -->
+ <div class="body-row1" #rowRef data-id="taiwans-adiz" data-types="Administrative,Informational,Political,Security&Military">
+  <div class="heading-cell cell-name">
+    <div class="heading">Taiwan’s ADIZ</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+      <span class="category administrative">Administrative</span>
+ 	<span class="category informational">Informational</span>
+      <span class="category political">Political</span>
+	<span class="category security-military">Security&Military</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">20, 118</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="20" data-lng="118" data-zoom="4"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+
+ <!-- ✋🏻5050DB✋🏻 -->
+ <div class="body-row1" #rowRef data-id="eurotunnel-zone" data-types="Administrative,Economic,Health&Quarantine,Physical,Political,Security&Military,Socio-Cultural">
+  <div class="heading-cell cell-name">
+    <div class="heading">Channel Tunnel Zone</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+      <span class="category administrative">Administrative</span>
+      <span class="category economic">Economic</span>
+      <span class="category health-quarantine">Health&Quarantine</span>
+      <span class="category physical">Physical</span>
+      <span class="category political">Political</span>
+      <span class="category security-military">Security&Military</span>
+     <span class="category socio-cultural">Socio-Cultural</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">51.03217,1.48810</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="51.03217" data-lng="1.48810" data-zoom="8"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+
+
+
+ <!-- 🤚🏼5151DB🤚🏼 -->
+ <div class="body-row1" #rowRef data-id="us-surveillance-towers" data-types="Administrative,Economic,Informational,Physical,Political,Security&Military,Socio-Cultural">
+  <div class="heading-cell cell-name">
+    <div class="heading">US Surveillance Towers</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+      <span class="category administrative">Administrative</span>
+      <span class="category economic">Economic</span>
+      <span class="category informational">Informational</span>
+      <span class="category physical">Physical</span>
+      <span class="category political">Political</span>
+      <span class="category security-military">Security&Military</span>
+     <span class="category socio-cultural">Socio-Cultural</span>
+
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">31.33419, -110.93388</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="31.334194" data-lng="-110.933889" data-zoom="5"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+
+ <!-- 🤚🏼5252DB🤚🏼 -->
+ <div class="body-row1" #rowRef data-id="haskell-free-library" data-types="Administrative,Economic,Informational,Physical,Political,Security&Military,Socio-Cultural">
+  <div class="heading-cell cell-name">
+    <div class="heading">Haskell Free Library</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+      <span class="category administrative">Administrative</span>
+      <span class="category economic">Economic</span>
+      <span class="category informational">Informational</span>
+      <span class="category physical">Physical</span>
+      <span class="category political">Political</span>
+      <span class="category security-military">Security&Military</span>
+     <span class="category socio-cultural">Socio-Cultural</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">45.00584, -72.09778</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="45.00584" data-lng="-72.09778" data-zoom="10"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+ <!-- 🤚🏼5353DB🤚🏼 -->
+ <div class="body-row1" #rowRef data-id="south-china-sea-disputed-waters" data-types="Administrative,Economic,Informational,Natural,Physical,Political,Security&Military,Socio-Cultural">
+  <div class="heading-cell cell-name">
+    <div class="heading">South China Sea</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+      <span class="category administrative">Administrative</span>
+      <span class="category economic">Economic</span>
+      <span class="category informational">Informational</span>
+      <span class="category natural">Natural</span>
+      <span class="category physical">Physical</span>
+      <span class="category political">Political</span>
+      <span class="category security-military">Security&Military</span>
+     <span class="category socio-cultural">Socio-Cultural</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">10.0, 115.0</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="10.0" data-lng="115.0" data-zoom="3"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+
+ <!-- 🤚🏼5454DB🤚🏼 -->
+ <div class="body-row1" #rowRef data-id="ledra-palace-border" data-types="Administrative,Economic,Informational,Physical,Political,Security&Military,Socio-Cultural">
+  <div class="heading-cell cell-name">
+    <div class="heading">Ledra Palace Crossing</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+      <span class="category administrative">Administrative</span>
+      <span class="category economic">Economic</span>
+      <span class="category informational">Informational</span>
+	<span class="category physical">Physical</span>
+      <span class="category political">Political</span>
+ 	<span class="category security-military">Security&Military</span>
+   <span class="category socio-cultural">Socio-Cultural</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">35.17916, 33.35555</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="35.17916" data-lng="33.35555" data-zoom="13"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+ <!-- 🤚🏼5555DB🤚🏼 -->
+ <div class="body-row1" #rowRef data-id="un-blue-line" data-types="Administrative,Physical,Political,Security&Military,Socio-Cultural">
+  <div class="heading-cell cell-name">
+    <div class="heading">UN Blue Line</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+      <span class="category administrative">Administrative</span>
+      <span class="category physical">Physical</span>
+      <span class="category political">Political</span>
+      <span class="category security-military">Security&Military</span>
+     <span class="category socio-cultural">Socio-Cultural</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">33.2486, 35.5900</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="33.2486" data-lng="35.5900" data-zoom="12"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+
+ <!-- 🤚🏼5656DB🤚🏼 -->
+ <div class="body-row1" #rowRef data-id="narva-river" data-types="Administrative,Economic,Natural,Physical,Political,Security&Military,Socio-Cultural">
+  <div class="heading-cell cell-name">
+    <div class="heading">Narva River</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+      <span class="category administrative">Administrative</span>
+      <span class="category economic">Economic</span>
+      <span class="category natural">Natural</span>
+      <span class="category physical">Physical</span>
+      <span class="category political">Political</span>
+      <span class="category security-military">Security&Military</span>
+     <span class="category socio-cultural">Socio-Cultural</span>
+
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">59.37991, 28.19126</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="59.3789" data-lng="28.2045" data-zoom="10"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+ <!-- 🤚🏼5757DB🤚🏼 -->
+ <div class="body-row1" #rowRef data-id="australias-offshore" data-types="Administrative,Health&Quarantine,Physical,Political,Security&Military,Socio-Cultural">
+  <div class="heading-cell cell-name">
+    <div class="heading">Nauru</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+      <span class="category administrative">Administrative</span>
+ 	<span class="category health-quarantine">Health&Quarantine</span>
+   <span class="category physical">Physical</span>
+      <span class="category political">Political</span>
+      <span class="category security-military">Security&Military</span>
+      <span class="category socio-cultural">Socio-Cultural</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">-0.5287, 166.9329</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="-0.5287" data-lng="166.9329" data-zoom="10"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+
+ <!-- 🤚🏼5858DB🤚🏼 -->
+ <div class="body-row1" #rowRef data-id="transnistria-checkpoints" data-types="Administrative,Economic,Physical,Political,Security&Military,Socio-Cultural">
+  <div class="heading-cell cell-name">
+    <div class="heading">Transnistria Checkpoints</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+	<span class="category administrative">Administrative</span>
+  <span class="category economic">Economic</span>
+  <span class="category physical">Physical</span>
+  <span class="category political">Political</span>
+  <span class="category security-military">Security&Military</span>
+ <span class="category socio-cultural">Socio-Cultural</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">46.85761, 29.43982</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag inactive">• inactive</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="46.85761" data-lng="29.4398" data-zoom="12"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+ <!-- 🤚🏼5959DB🤚🏼 -->
+ <div class="body-row1" #rowRef data-id="berlin-tegel-refugee-shelter" data-types=
+ "Administrative,Economic,Health&Quarantine,Informational,Labor&Financial,Physical,Political,Security&Military,Socio-Cultural">
+  <div class="heading-cell cell-name">
+    <div class="heading">Berlin Tegel Refugee</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+      <span class="category administrative">Administrative</span>
+      <span class="category economic">Economic</span>
+      <span class="category health-quarantine">Health&Quarantine</span>
+      <span class="category informational">Informational</span>
+      <span class="category labor-financial">Labor&Financial</span>
+      <span class="category physical">Physical</span>
+      <span class="category political">Political</span>
+      <span class="category security-military">Security&Military</span>
+     <span class="category socio-cultural">Socio-Cultural</span>
+
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">52.58266, 13.33060</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="52.582669" data-lng="13.330601" data-zoom="15"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+
+ <!-- 🤚🏼6060DB🤚🏼 -->
+ <div class="body-row1" #rowRef data-id="crimea" data-types=
+ "Administrative,Economic,Informational,Labor&Financial,Natural,Physical,Political,Security&Military,Socio-Cultural">
+  <div class="heading-cell cell-name">
+    <div class="heading">Crimea</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+      <span class="category administrative">Administrative</span>
+      <span class="category economic">Economic</span>
+      <span class="category informational">Informational</span>
+      <span class="category labor-financial">Labor&Financial</span>
+      <span class="category natural">Natural</span>
+      <span class="category physical">Physical</span>
+      <span class="category political">Political</span>
+      <span class="category security-military">Security&Military</span>
+     <span class="category socio-cultural">Socio-Cultural</span>
+
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">45.21700,34.44200</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="45.21700" data-lng="34.44200" data-zoom="5"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+ <!-- 🤚🏼6161DB🤚🏼 -->
+ <div class="body-row1" #rowRef data-id="tohono-oʼodham-nation" data-types=
+ "Economic,Health&Quarantine,Informational,Physical,Political,Security&Military,Socio-Cultural">
+  <div class="heading-cell cell-name">
+    <div class="heading">Tohono Oʼodham Nation</div>
+  </div>
+  <div class="heading-cell cell-types">
+    <div class="heading">
+      <span class="category economic">Economic</span>
+      <span class="category health-quarantine">Health&Quarantine</span>
+      <span class="category informational">Informational</span>
+      <span class="category physical">Physical</span>
+      <span class="category political">Political</span>
+      <span class="category security-military">Security&Military</span>
+      <span class="category socio-cultural">Socio-Cultural</span>
+    </div>
+  </div>
+  <div class="heading-cell cell-coord">
+    <div class="heading">31.99195, -112.06241</div>
+  </div>
+  <div class="heading-cell cell-status">
+    <div class="heading status-tag active">• Active</div>
+  </div>
+  <div class="heading-cell cell-icon">
+    <div class="heading">+</div>
+  </div>
+  <div class="dropdown-content">
+    <div class="dropdown-item item-1">
+      <div class="map" data-lat="31.99195" data-lng="-112.06241" data-zoom="5"></div>
+    </div>
+    <div class="dropdown-item item-2"></div>
+    <div class="dropdown-item item-3"></div>
+  </div>
+</div>
+
+<!-- 🤚🏼6262DB🤚🏼 -->
+<div class="body-row1" #rowRef data-id="baarle-nassau" data-types=
+"Administrative,Economic,Physical,Political,Socio-Cultural">
+ <div class="heading-cell cell-name">
+   <div class="heading">Baarle-Hertog/Nassau</div>
+ </div>
+ <div class="heading-cell cell-types">
+   <div class="heading">
+    <span class="category administrative">Administrative</span>
+    <span class="category economic">Economic</span>
+     <span class="category physical">Physical</span>
+     <span class="category political">Political</span>
+     <span class="category socio-cultural">Socio-Cultural</span>
+   </div>
+ </div>
+ <div class="heading-cell cell-coord">
+   <div class="heading">51.43755, 4.92848</div>
+ </div>
+ <div class="heading-cell cell-status">
+   <div class="heading status-tag active">• Active</div>
+ </div>
+ <div class="heading-cell cell-icon">
+   <div class="heading">+</div>
+ </div>
+ <div class="dropdown-content">
+   <div class="dropdown-item item-1">
+     <div class="map" data-lat="51.43755" data-lng="4.92848" data-zoom="11"></div>
+   </div>
+   <div class="dropdown-item item-2"></div>
+   <div class="dropdown-item item-3"></div>
+ </div>
+</div>
+
+
+<!-- 🤚🏼6363DB🤚🏼 -->
+<div class="body-row1" #rowRef data-id="turtuk" data-types=
+"Administrative,Economic,Informational,Physical,Political,Security&Military,Socio-Cultural">
+ <div class="heading-cell cell-name">
+   <div class="heading">Turtuk</div>
+ </div>
+ <div class="heading-cell cell-types">
+   <div class="heading">
+    <span class="category administrative">Administrative</span>
+    <span class="category economic">Economic</span>
+    <span class="category informational">Informational</span>
+     <span class="category physical">Physical</span>
+     <span class="category political">Political</span>
+     <span class="category security-military">Security&Military</span>
+     <span class="category socio-cultural">Socio-Cultural</span>
+   </div>
+ </div>
+ <div class="heading-cell cell-coord">
+   <div class="heading">34.84574, 76.82766</div>
+ </div>
+ <div class="heading-cell cell-status">
+   <div class="heading status-tag active">• Active</div>
+ </div>
+ <div class="heading-cell cell-icon">
+   <div class="heading">+</div>
+ </div>
+ <div class="dropdown-content">
+   <div class="dropdown-item item-1">
+     <div class="map" data-lat="34.84574" data-lng="76.82766" data-zoom="12"></div>
+   </div>
+   <div class="dropdown-item item-2"></div>
+   <div class="dropdown-item item-3"></div>
+ </div>
+</div>
+
+
+<!-- 🤚🏼6464DB🤚🏼 -->
+<div class="body-row1" #rowRef data-id="triple-frontier" data-types=
+"Administrative,Economic,Informational,Natural,Physical,Political,Security&Military,Socio-Cultural">
+ <div class="heading-cell cell-name">
+   <div class="heading">Triple Frontier</div>
+ </div>
+ <div class="heading-cell cell-types">
+   <div class="heading">
+    <span class="category administrative">Administrative</span>
+    <span class="category economic">Economic</span>
+    <span class="category informational">Informational</span>
+    <span class="category natural">Natural</span>
+     <span class="category physical">Physical</span>
+     <span class="category political">Political</span>
+     <span class="category security-military">Security&Military</span>
+     <span class="category socio-cultural">Socio-Cultural</span>
+   </div>
+ </div>
+ <div class="heading-cell cell-coord">
+   <div class="heading">-25.59289, -54.59360</div>
+ </div>
+ <div class="heading-cell cell-status">
+   <div class="heading status-tag active">• Active</div>
+ </div>
+ <div class="heading-cell cell-icon">
+   <div class="heading">+</div>
+ </div>
+ <div class="dropdown-content">
+   <div class="dropdown-item item-1">
+     <div class="map" data-lat="-25.59289" data-lng="-54.59360" data-zoom="12"></div>
+   </div>
+   <div class="dropdown-item item-2"></div>
+   <div class="dropdown-item item-3"></div>
+ </div>
+</div>
+
+
+
+
+
+             <!-- ❤️여기에 질문지 내용❤️ -->
+               <!-- Q1 -->
+              <div class="question-box" id="q1">
+                <select id="nationality">
+                  <option value=""><span class="arrow">⇥</span> EXPLORE DIFFERENT TYPES OF BORDERS THAT SHAPE OUR WORLD NOW </option>
+                  <option value="Group_A">Informational Border</option>
+                  <option value="Group_B">Political Border</option>
+                  <option value="Group_C">Administrative Border</option>
+                  <option value="Group_D">Economic Border</option>
+                  <option value="Group_E">Labor & Financial Border</option>
+                  <option value="Group_F">Socio-Cultural Border</option>
+                  <option value="Group_G">Security & Military</option>
+                  <option value="Group_H">Health & Quarantine</option>
+                  <option value="Group_I">Physical Border</option>
+                  <option value="Group_J">Natural Border</option>
+                </select>
+              </div>
+  
+
+
+            
+          </main>
+        </section>
+      </main>
+
+      </div>
+    </div>
+</div>
+<!-- ✅ scale-wrapper 끝 -->
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.js"></script>
+
+
+<!-- js -->
+<script src="js/index.js"></script>
+
+<script>
+//정렬
+const table = document.querySelector(".table");
+const headerCells = table.querySelectorAll(".heading-title");
+const sortState = {};
+
+headerCells.forEach((headerCell, index) => {
+  headerCell.style.cursor = "pointer";
+
+  headerCell.addEventListener("click", () => {
+    const currentState = sortState[index] || "asc";
+    const newState = currentState === "asc" ? "desc" : "asc";
+    sortState[index] = newState;
+
+    // 모든 화살표 초기화
+    headerCells.forEach((cell, i) => {
+      const arrow = cell.querySelector(".sort-arrow");
+      if (arrow) {
+        arrow.textContent = "⇅";
+        arrow.classList.remove("active-sort");
+      }
+    });
+
+    // 현재 클릭한 헤더에 화살표 변경
+    const arrow = headerCell.querySelector(".sort-arrow");
+    if (arrow) {
+      arrow.textContent = newState === "asc" ? "▲" : "▼";
+      arrow.classList.add("active-sort");
+    }
+
+    sortTableByColumn(index, newState);
+  });
+});
+
+function sortTableByColumn(colIndex, order) {
+  const rows = Array.from(table.querySelectorAll(".body-row1"));
+
+  rows.sort((a, b) => {
+    const aText = getCellText(a, colIndex);
+    const bText = getCellText(b, colIndex);
+    const aNum = parseFloat(aText.replace(/[^0-9.-]+/g,""));
+    const bNum = parseFloat(bText.replace(/[^0-9.-]+/g,""));
+
+    if (!isNaN(aNum) && !isNaN(bNum)) {
+      return order === "asc" ? aNum - bNum : bNum - aNum;
+    } else {
+      return order === "asc"
+        ? aText.localeCompare(bText)
+        : bText.localeCompare(aText);
+    }
+  });
+
+  rows.forEach(row => table.appendChild(row));
+}
+
+function getCellText(row, colIndex) {
+  const cells = row.querySelectorAll(".heading-cell");
+  if (!cells[colIndex]) return "";
+  return cells[colIndex].innerText.trim();
+}
+
+// 초기 정렬
+sortState[0] = "asc";
+sortTableByColumn(0, "asc");
+
+const initialArrow = headerCells[0].querySelector(".sort-arrow");
+if (initialArrow) {
+  initialArrow.textContent = "▲";
+  initialArrow.classList.add("active-sort");
+}
+
+</script>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="./css/global.css"/>
+    <link rel="stylesheet" href="./css/index.css"/>
+    <link rel="stylesheet" href="./css/detail.css"/>
+
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.css" rel="stylesheet"/>
+  </head>
+
+
+  <body>
+    <!-- ✅ scale-wrapper 시작 -->
+    <div class="scale-wrapper">
+
+    <div class="two-column-bg">
+        <div class="column left"></div>
+         <div class="column right"></div> 
+      </div>
+
+       <!-- ◼️◼️ ◼️ ◼️ ◼️ ◼️ ◼️   -->
+       <!-- ◼️ 왼쪽 위 정사각형 -->
+      <div class="top-square left"></div>
+      <div class="top-square right"></div>
+      <!-- ◼️ 검정색 선 추가 -->
+    <div class="side-line left-line"></div>
+    <div class="side-line right-line"></div>
+      <!-- ◼️ 검정색 선 추가2 -->
+    <div class="side-line left-line bottom-line"></div>
+    <div class="side-line right-line bottom-line"></div>
+
+    <div class="index-main">
+      <main class="index-main-inner">
+        <section class="frame-group">
+          <div class="container">
+            <div class="half-rectangle"></div>
+            <div class="half-rectangle1"></div>
+          </div>
+
+          <header class="footer">
+            <div class="frame-parent">
+              <div class="unseen-flow-wrapper">
+                <h3 class="unseen-flow-border">
+                  <span>
+                    : <span class="bickham" style="margin-right: 0.1em;">(un)</span>seen flow 
+                   <span class="a">a.</span>
+                  </span>
+                </h3>
+              </div>
+            </div>
+            
+              <!-- 두 번째 컬럼 -->
+        <div class="frame-parent">
+          <div class="invisible-borders-wrapper">
+            <h3 class="invisible-borders">
+              : <span class="bickham" style="margin-right: 0.1em;">(in)</span>visible system, : <span class="bickham" style="margin-right: 0.1em;">(dis)</span>ability agency 
+            </h3>
+          </div>
+        </div>
+      </footer>
+          </header>
+
+          <body>
+        <!-- 상단 Back 버튼 -->
+        <button id="back-button">← Back</button>
+
+
+
+
+            <div class="detailpage">
+              <main class="background-parent">
+                
+                <section class="map-wrapper">
+                  <div class="map" data-lat="50" data-lng="10" data-zoom="3.5">
+                    <div class="map-api"></div>
+                  </div>
+                </section>
+
+
+
+                <main class="parent">
+                  <div class="div">
+                    <!-- 1️⃣ -->
+                    <div class="place">
+                      <!-- 1️⃣-1️⃣ -->
+                      <div class="frame-how-to-cross">
+                        <h1 class="the-bridge-of"></h1>
+                      </div>
+                      <!-- 1️⃣-2️⃣ -->
+                      <div class="the-bridge-wrapper">
+                        <div class="the-bridge">
+                          <div class="the-bridge-of1">
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 1️⃣-5️⃣-->
+                      <section class="div1">
+                        <div class="section">
+                          <div class="length-wrapper">
+                            <!-- 1. Length -->
+                            <h3 class="length">1 Area</h3>
+                          </div>
+                          <div class="meters-wrapper">
+                            <h3 class="meters"> </h3>
+                          </div>
+                        </div>
+                        <!-- 2. Established -->
+                        <div class="section">
+                          <div class="length-wrapper">
+                            <h3 class="length">2 Established</h3>
+                          </div>
+                          <div class="established-wrapper">
+                            <h3 class="established"> </h3>
+                          </div>
+                        </div>
+
+                        <!-- 3️⃣.border types  -->
+                      <div class="div5">
+                        <div class="length-wrapper">
+                          <h3 class="length" id="border-type-count">Border Types</h3>
+                        </div>
+                        <div class="tag-toggle-parent" id="tag-toggle-parent">
+                          <!-- 여기에 JavaScript로 태그들이 동적으로 들어감 -->
+                        </div>
+                      </div>
+
+                        <!-- 4. Crossing Type -->
+                        <div class="section">
+                          <div class="length-wrapper">
+                            <h3 class="length">4 Crossing Type</h3>
+                          </div>
+                          <div class="cross-wrapper" id="crossing-container">
+                            <h3 class="cross"></h3>
+                          </div>
+                        </div>
+                        <!-- 5. Status -->
+                        <div class="section">
+                          <div class="length-wrapper">
+                            <h3 class="length">5 Status</h3>
+                          </div>
+                          <div class="status-wrapper">
+                            <h3 class="status"></h3>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+
+
+
+                     <!-- 2️⃣ -->
+                    <div class="how-to-cross">
+                      <div class="frame-how-to-cross">
+                        <h2 class="the-bridge-of">How to Cross?</h2>
+                      </div>
+                      <!-- ❤️ -->
+                      <footer class="a-b-a">
+                        <!-- ❤️❤️ -->
+                        <section class="a-to-b first-section">
+                          <div class="frame-a-to-b">
+                            <h3 class="bridge-of-no heading-1"> </h3>
+                          </div>
+                           <!-- 2️⃣-1️⃣ 6.-->
+                          <div class="empty-visibility">
+                            <div class="div8">
+                              <div class="visibility">
+                                <div class="length-wrapper">
+                                  <h3 class="length">6 Visibility</h3>
+                                  <div class="tooltip-wrapper">
+                                    <span class="tooltip-icon">?</span>
+                                    <span class="tooltip-text">
+                                      How easily the border is observed or noticed, e.g., through fences, guards, or checkpoints.
+                                    </span>
+                                </div>
+                                </div>
+                                <div class="high-wrapper">
+                                  <div class="high"></div>
+                                </div>
+                              </div>
+                              <!-- 2️⃣-1️⃣ 7.-->
+                              <div class="control">
+                                <div class="length-wrapper">
+                                  <h3 class="length">7 Control</h3>
+                                </div>
+                                <div class="high-wrapper">
+                                  <div class="high"></div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- 2️⃣-1️⃣ 8.-->
+                            <div class="regulation">
+                              <div class="regulation-wrapper">
+                                <h3 class="length">8 Regulation</h3>
+                              </div>
+                              <div class="the-bridge-is-closed-to-the-pu-wrapper">
+                                <div class="the-bridge-is">   </div>
+                              </div>
+                            </div>
+                          </div>
+                        </section>
+
+                             <!-- ❤️❤️ -->
+                             <section class="a-to-b second-section">
+                              <div class="frame-a-to-b">
+                                <h3 class="bridge-of-no heading-2"> </h3>
+                              </div>
+                               <!-- 2️⃣-1️⃣ 6.-->
+                              <div class="empty-visibility">
+                                <div class="div8">
+                                  <div class="visibility">
+                                    <div class="length-wrapper">
+                                      <h3 class="length">6 Visibility</h3>
+                                    </div>
+                                    <div class="high-wrapper">
+                                      <div class="high"></div>
+                                    </div>
+                                  </div>
+                                  <!-- 2️⃣-1️⃣ 7.-->
+                                  <div class="control">
+                                    <div class="length-wrapper">
+                                      <h3 class="length">7 Control</h3>
+                                    </div>
+                                    <div class="high-wrapper">
+                                      <div class="high"></div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!-- 2️⃣-1️⃣ 8.-->
+                                <div class="regulation">
+                                  <div class="regulation-wrapper">
+                                    <h3 class="length">8 Regulation</h3>
+                                  </div>
+                                  <div class="the-bridge-is-closed-to-the-pu-wrapper">
+                                    <div class="the-bridge-is">
+                                      
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </section>
+         
+                    </div>
+                  </div>
+         
+                </main>
+              </main>
+            </div>
+
+      <!-- ✅ scale-wrapper 끝 -->
+      <script src="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.js"></script>
+
+
+      <!-- js -->
+      <script src="js/detail.js"></script>
+
+
+          </body>
+        </html>
