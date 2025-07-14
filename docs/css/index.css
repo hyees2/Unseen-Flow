@@ -10,8 +10,8 @@
 /* List/Thumbnail */
 .view-selector {
   position: absolute;
-  top: 110px;
-  right: 5%; /* 오른쪽에서 20px 떨어진 위치 */
+  top: 6.7rem;
+  right: 5%;
   z-index: 998;
 }
 
@@ -796,9 +796,9 @@ select {
 
 .table {
   height: auto;
-  width: 970px;
+  width: 90vw;
   flex-direction: column;
-  padding-top: 7vh;
+  padding-top: clamp(120px, 12vw, 250px);
   box-sizing: border-box;
   gap: 5px; 
   z-index: 9;
